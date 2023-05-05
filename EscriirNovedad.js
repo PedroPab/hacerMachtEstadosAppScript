@@ -34,10 +34,10 @@ function actualizarEstatusLead() {
   var data = range.getValues();
 
   // Obtener índice de la columna Merge # GUIA
-  var mergeColumnIndex = data[0].indexOf("Merge # GUIA");
+  var mergeColumnIndex = allarColumna(data, "Merge # GUIA");
 
   // Obtener índice de la columna Estatus del lead
-  var estatusColumnIndex = data[0].indexOf("Estatus del lead");
+  var estatusColumnIndex = allarColumna(data, "Estatus del lead");
 
   // Verificar si se encontró la columna Merge # GUIA
   if (mergeColumnIndex === -1) {
@@ -61,3 +61,7 @@ function actualizarEstatusLead() {
     }
   }
 }
+function allarColumna(data, nombreColumna) {
+  return data[0].indexOf(nombreColumna);
+}
+
